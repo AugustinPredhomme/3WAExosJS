@@ -3,7 +3,7 @@ function myMap(arr, func) {
     var newArr = [];
 
     for (var i = 0; i < arr.length; i++) {
-        newArr.push(func(arr[i], i, arr));
+        newArr.push(func(arr[i]));
     }
 
     return newArr;
@@ -14,7 +14,7 @@ function myFilter(arr, func) {
     var filteredArr = [];
 
     for (var i = 0; i < arr.length; i++) {
-        if (func(arr[i], i, arr)) {
+        if (func(arr[i])) {
             filteredArr.push(arr[i]);
         }
     }
@@ -27,7 +27,7 @@ function myReduce(arr, func, initialValue) {
     var accumulator = initialValue !== undefined ? initialValue : 0;
 
     for (var i = 0; i < arr.length; i++) {
-        accumulator = func(accumulator, arr[i], i, arr);
+        accumulator = func(accumulator, arr[i]);
     }
     
     return accumulator;
